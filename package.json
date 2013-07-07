@@ -4,7 +4,7 @@
   "description": "monads implementation in javascript (inspired by haskell monads)",
   "main": "index.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodeunit test"
   },
   "repository": {
     "type": "git",
