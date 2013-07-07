@@ -1,5 +1,5 @@
 Left = (val) -> 
-    if not is_left(val)
+    if not is_left(this)
         return new Left val
     else
         this.val = val
@@ -9,7 +9,7 @@ is_left = (val) -> val instanceof Left
 
 
 Right = (val) -> 
-    if not is_right(val)
+    if not is_right(this)
         return new Right val
     else
         this.val = val
