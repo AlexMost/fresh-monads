@@ -17,3 +17,11 @@ exports.test_maybe_failure_computation = (test) ->
     res = _do Maybe, [f1, f4, f2, f3], 1
     test.ok (res instanceof Nothing), "Expected result is Nothign, recieved - #{res}"
     test.done()
+
+
+exports.test_throws_error_when_function_returns_not_maybe_type = (test) ->
+    test.throws(
+          (_do Maybe, [f1, f4, f5, f2, f3], 1)
+        , Error
+        , "Throw error when sequence function returns not maybe type")
+    test.done()

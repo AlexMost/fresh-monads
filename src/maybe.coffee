@@ -5,9 +5,10 @@ Just = (val) ->
         this.val = val
 
 
-Nothing = ->
-    if not(this instanceof Nothing)
-        return new Nothing
+is_nothing = (v) -> v instanceof Nothing
+
+
+Nothing = -> return new Nothing() if not is_nothing(this)
 
 
 Maybe =
@@ -21,4 +22,4 @@ Maybe =
         else throw "Maybe operates only with Just or Nothing, recieved - #{mv}"
 
 
-module.exports = {Maybe, Nothing, Just}
+module.exports = {Maybe, Nothing, Just, is_nothing}

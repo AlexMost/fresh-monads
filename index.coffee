@@ -1,4 +1,11 @@
 {_do} = require './src/monads'
-{Just, Nothing, Maybe} = require './src/maybe'
+{Just, Nothing, Maybe, is_nothing} = require './src/maybe'
 
-module.exports = {_do, Just, Nothing, Maybe}
+
+module.exports = {
+    _do
+    Just
+    Nothing
+    Maybe
+    is_nothing
+}
