@@ -1,6 +1,6 @@
 {
   "name": "fresh-monads",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "monads implementation in javascript (inspired by haskell monads)",
   "main": "index.coffee",
   "scripts": {
