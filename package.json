@@ -1,0 +1,20 @@
+{
+  "name": "fresh-monads",
+  "version": "0.0.0",
+  "description": "monads implementation in javascript (inspired by haskell monads)",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AlexMost/fresh-monads.git"
+  },
+  "keywords": [
+    "monads",
+    "monad"
+  ],
+  "author": "Alexander Mostovenko",
+  "license": "BSD",
+  "gitHead": "50a14ac0339ab1f4c85232e4b79688f022cbec3a"
+}
