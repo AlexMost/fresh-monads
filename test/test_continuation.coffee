@@ -1,9 +1,12 @@
-{Cont, _do} = require '../index'
+{Cont, lift_sync, _do} = require '../index'
 
-f1 = (x, f) -> f x + 1
-f2 = (x, f) -> f x + 2
-f3 = (x, f) -> f x + 3
-f4 = (x, f) -> f x + 4
+
+f1 = (x) -> x + 1
+f2 = (x) -> x + 2
+f3 = (x) -> x + 3
+
 
 exports.test_continuation_pass = (test) ->
-    test.done()
+    (_do Cont, [lift_sync(f1), lift_sync(f2), lift_sync(f3)], 1) (res) ->
+        test.ok res is 7
+        test.done()
