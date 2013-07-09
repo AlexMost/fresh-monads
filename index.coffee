@@ -1,7 +1,7 @@
 {_do} = require './src/monads'
 {Just, Nothing, Maybe, is_nothing} = require './src/maybe'
 {Either, Left, Right, is_right, is_left} = require './src/either'
-{ContM, lift_sync, lift_async} = require './src/continuation'
+{ContM, ContT, l_sync, l_async} = require './src/continuation'
 
 
 module.exports = {
@@ -16,6 +16,7 @@ module.exports = {
     is_right
     is_left
     ContM
-    lift_sync
-    lift_async
+    ContT
+    l_sync
+    l_async
 }

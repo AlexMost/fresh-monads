@@ -14,6 +14,9 @@
     "monads",
     "monad"
   ],
+  "dependencies" : {
+    "libprotein": "*"
+  },
   "author": "Alexander Mostovenko",
   "license": "BSD",
   "gitHead": "50a14ac0339ab1f4c85232e4b79688f022cbec3a"
