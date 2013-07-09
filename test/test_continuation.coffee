@@ -6,10 +6,12 @@ f1 = (x) -> x + 1
 f2 = (x) -> x + 2
 f3 = (x) -> x + 3
 
+
 # async functions
 f4 = (x, cb) -> cb x + 1
 f5 = (x, cb) -> cb x + 2
 f6 = (x, cb) -> cb x + 3
+
 
 # continuation transformer functions with either monad
 f7 = (x) -> Right x + 1
@@ -31,11 +33,7 @@ exports.test_continuation_async_composition = (test) ->
 
 
 exports.test_sync_and_async_composition = (test) ->
-    seq = [
-        l_sync f1
-        l_async f5
-        l_sync f3
-    ]
+    seq = [(l_sync f1), (l_async f5), (l_sync f3)]
 
     (_do ContM, seq, 1) (res) ->
         test.ok res is 7
@@ -45,17 +43,8 @@ exports.test_sync_and_async_composition = (test) ->
 exports.test_continuation_transformer_either = (test) ->
     res_monad = ContT Either
 
-    seq1 = [
-        l_sync f7
-        l_sync f8
-        l_async f9
-    ]
-
-    seq2 = [
-        l_sync f7
-        l_async f10
-        l_async f9
-    ]
+    seq1 = [(l_sync f7), (l_sync f8), (l_async f9)]
+    seq2 = [(l_sync f7), (l_async f10), (l_async f9)]
 
     (_do res_monad, seq1, 1) (res) ->
         test.ok is_right res
