@@ -12,7 +12,7 @@ ContM =
     result: (v) -> (c) -> c v
 
     bind: (f, mv) ->
-        (k) -> mv (a)-> ((f a) k)
+        (c) -> mv((a)-> (f a) c)
 
 
 module.exports = {ContM, lift_sync, lift_async}
