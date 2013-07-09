@@ -7,7 +7,7 @@ Cont =
     result: (v) -> (c) -> c v
 
     bind: (f, mv) ->
-        (c) -> mv (a)-> (f a) c
+        (c) -> mv((a)-> (f a) c)
 
 
 module.exports = {Cont, lift_sync}
