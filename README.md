@@ -9,8 +9,8 @@ Implementation of monads in coffeescript (inspired by haskell).
 Do is used to bind our functions in one sequence.
 Example
 
-```
-_do Maybe [f1, f2, f3, f4], 1x
+```coffee
+_do Maybe [f1, f2, f3, f4], 1
 
 # Maybe - instance of the Maybe monad.
 # [f1, f2, f3, f4] - sequence functions that we want to compose.
@@ -22,14 +22,14 @@ Has two value constructors : Just and Nothing.
 
 **Just** - continues computation and passes it's argument to the next function. You can access wrapped value in Just through the val property.
 
-```
+```coffee
 j = Just 5
 j.val is 5 # true
 ```
 
 **Nothing** - stops computation, if some function in sequence returns Nothing - the next function will not be called.
 
-```
+```coffee
 {_do, Maybe, Just, Nothing} = require 'fresh-monads'
 
 func1 = (x) -> Just 1 + x
@@ -54,7 +54,7 @@ Has two value constructors: Right and Left.
 
 **Left** - stops computation and returns some information about the reason of interrupting computation.
 
-```
+```coffee
 {_do, Either, Left, Right} = require 'fresh-monads'
 
 r = Right 5
@@ -85,7 +85,7 @@ Before including some function in a continuation - we must lift it.
 **l_async** - lifts asynchronus function (with callback)
 
 
-```
+```coffee
 {_do, ContM, l_sync, l_async} = require 'fresh-monads'
 
 # Composing synchronous functions
@@ -134,7 +134,7 @@ Monads are composable by their nature, you can combine them via monad transforme
 
 Little example :
 
-```
+```coffee
 {_do, ContT, Either, l_sync, l_async} = require 'fresh-monads'
 
 f1 = (x, cb) -> cb (Right x + 1)
