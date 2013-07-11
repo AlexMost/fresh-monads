@@ -15,9 +15,9 @@ Maybe =
     result: (v) -> Just v
 
     bind: (f, mv) ->
-        if mv instanceof Nothing
+        if is_nothing mv
             mv
-        else if mv instanceof Just
+        else unless is_nothing mv
             f mv.val
         else throw "Maybe operates only with Just or Nothing, recieved - #{mv}"
 
