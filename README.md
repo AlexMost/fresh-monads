@@ -147,7 +147,11 @@ sequence = [
     l_async f3
 ]
 
-# As we see, we have both - continuation passing functions and either monad values to have an ability to control the sequence flow. Let's create transformer monad that will be able to do both - compose continuation functions and control sequence flow through return value (Right or # Left)
+# As we see, we have both - continuation passing functions and either monad values
+# to have an ability to control the sequence flow. 
+# Let's create transformer monad that will be able to do both:
+# - composes continuation functions
+# - controls sequence flow through return value (Right or Left)
 
 ContEither = ContT Either
 
