@@ -27,7 +27,7 @@ j = Just 5
 j.val is 5 # true
 ```
 
-**Nothing** - stops computation, if some function in sequence returns Nothing - the next function will not be called.
+**Nothing** - stops computation, if some function in sequence returns Nothing - the next function will be not called.
 
 ```coffee
 {_do, Maybe, Just, Nothing} = require 'fresh-monads'
@@ -35,13 +35,12 @@ j.val is 5 # true
 func1 = (x) -> Just 1 + x
 func2 = (x) -> Just 2 + x
 func3 = (x) -> Just 3 + x
-nothing_func (x) -> Nothing()
+nothing_func = (x) -> Nothing()
 
-# To compose this function we may use _do function
+# To compose this functions we may use _do function
 
 res = _do Maybe, [func1, func2, func3], 1
 # res = Just 7
-
 
 res = _do Maybe, [func1, nothing_func, func2, func3], 1
 # res = Nothing
@@ -50,7 +49,7 @@ res = _do Maybe, [func1, nothing_func, func2, func3], 1
 ### Either monad
 Has two value constructors: Right and Left.
 
-**Right** - continues computation and passes new value to the next function in sequence.
+**Right** - continues computation and passes a new value to the next function in sequence.
 
 **Left** - stops computation and returns some information about the reason of interrupting computation.
 
@@ -76,7 +75,7 @@ res_left = _do Maybe, [func1, func2, left_func, func3], 1
 ```
 
 ### Continuation monad
-Executes functions in continuation passing style, also allows us to compose synchronous and asynchronous functions in one continuation.
+Executes functions sequence in continuation passing style, also allows us to compose synchronous and asynchronous functions in one sequence.
 
 Before including some function in a continuation - we must lift it.
 
