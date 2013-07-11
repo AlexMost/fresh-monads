@@ -6,7 +6,7 @@ Implementation of monads in coffeescript (inspired by haskell).
 ## API functions
 
 ### _do
-Do is used to bind our functions in one sequence.
+_do is used to bind our functions in one sequence.
 Example
 
 ```coffee
