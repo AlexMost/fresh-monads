@@ -67,10 +67,10 @@ func2 = (x) -> Right 2 + x
 func3 = (x) -> Right 3 + x
 left_func = (x) -> Left "stop"
 
-res_right = _do Maybe, [func1, func2, func3], 1
+res_right = _do Either, [func1, func2, func3], 1
 # res_right = Right 7
 
-res_left = _do Maybe, [func1, func2, left_func, func3], 1
+res_left = _do Either, [func1, func2, left_func, func3], 1
 # res_left = Left "some"
 ```
 
